@@ -1,0 +1,60 @@
+{
+  "people": [
+    {
+      "name": "陈思含",
+      "must_see": ["告五人"],
+      "very_want_to_see": ["回春丹", "文雀"],
+      "somewhat_want_to_see": ["胡彦斌", "卢冠廷"],
+      "notes": []
+    },
+    {
+      "name": "杨淇贤",
+      "must_see": ["梅卡德尔"],
+      "very_want_to_see": ["椿", "浅水", "告五人", "犬儒", "回春丹", "痛仰"],
+      "somewhat_want_to_see": [],
+      "notes": ["第三天其他的"]
+    },
+    {
+      "name": "蒋姝",
+      "must_see": ["徐佳莹", "胡彦斌", "回春丹", "宝石Gem", "曾轶可"],
+      "very_want_to_see": ["告五人", "郑润泽", "棱镜", "薛凯琪", "卫兰", "痛仰", "余佳运"],
+      "somewhat_want_to_see": ["吴克群", "椿"],
+      "notes": []
+    },
+    {
+      "name": "潘旭欣",
+      "must_see": ["郑润泽", "徐佳莹", "胡彦斌"],
+      "very_want_to_see": ["宝石Gem", "薛凯琪", "告五人"],
+      "somewhat_want_to_see": ["吴克群", "阿肆", "卫兰"],
+      "notes": []
+    },
+    {
+      "name": "谌雨涵",
+      "must_see": ["小狗的骨头", "卡西恩", "doudou"],
+      "very_want_to_see": ["胡彦斌", "宝石Gem", "回春丹", "告五人"],
+      "somewhat_want_to_see": [],
+      "notes": []
+    },
+    {
+      "name": "贺金意",
+      "must_see": ["阿肆", "余佳运", "郑润泽", "胡彦斌", "徐佳莹", "薛凯琪", "吴克群"],
+      "very_want_to_see": ["曾轶可", "卡西恩", "陈柏宇", "卫兰", "告五人", "回春丹", "陈婧霏", "宝石Gem"],
+      "somewhat_want_to_see": ["夏日入侵企画"],
+      "notes": []
+    },
+    {
+      "name": "杨田泽",
+      "must_see": ["告五人", "doudou", "胡彦斌", "徐佳莹", "农夫", "kiri T", "李幸倪"],
+      "very_want_to_see": ["侧田", "吴克群", "痛仰", "回春丹"],
+      "somewhat_want_to_see": ["夏日入侵企画", "陈柏宇"],
+      "notes": []
+    },
+    {
+      "name": "胡一希",
+      "must_see": ["陈婧霏", "棱镜", "汉堡黄", "南青", "许钧", "告五人"],
+      "very_want_to_see": ["卫兰", "薛凯琪", "胡彦斌", "徐佳莹", "回春丹"],
+      "somewhat_want_to_see": ["tomora"],
+      "notes": []
+    }
+  ]
+}
