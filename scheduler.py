@@ -18,6 +18,8 @@ PEOPLE_PATH = ROOT / "docs" / "mamba-performance.json"
 LINEUP_PATH = ROOT / "docs" / "festival-performances.json"
 OUTPUT_PATH = ROOT / "docs" / "schedule-v3.json"
 REPORT_PATH = ROOT / "docs" / "schedule-report-v3.md"
+V4_OUTPUT_PATH = ROOT / "docs" / "schedule-v4.json"
+V4_REPORT_PATH = ROOT / "docs" / "schedule-report-v4.md"
 V2_OUTPUT_PATH = ROOT / "docs" / "schedule-output.json"
 WINDOW_START = "12:00"
 WINDOW_END = "21:30"
@@ -215,6 +217,7 @@ def build_model(people: list[dict[str, Any]], performances: list[dict[str, Any]]
     scores: dict[int, cp_model.IntVar] = {}
     denominators: dict[int, int] = {}
     watched_by_person_category: dict[tuple[int, str], list[cp_model.IntVar]] = {}
+    watches_by_person_artist: dict[tuple[int, str], list[cp_model.IntVar]] = defaultdict(list)
     for p_index, person in enumerate(people):
         category_scores = []
         denominator = 0
@@ -247,6 +250,7 @@ def build_model(people: list[dict[str, Any]], performances: list[dict[str, Any]]
                     conflicts.append(conflict)
                 model.Add(watch + sum(conflicts) >= 1)
                 watched.append(watch)
+                watches_by_person_artist[p_index, performance["artist"]].append(watch)
             watched_by_person_category[p_index, category] = watched
             capped = model.NewIntVar(0, cap, f"count_{category}_p{p_index}")
             model.AddMinEquality(capped, [sum(watched), cap])
@@ -289,7 +293,11 @@ def build_model(people: list[dict[str, Any]], performances: list[dict[str, Any]]
         ("收尾班差距", close_range, "min"),
         ("换班次数", sum(shift_count_terms), "min"),
     ]
-    return model, shifts, by_person_date, {}, hours, scores, denominators, objectives
+    watch_variables = {
+        "by_category": watched_by_person_category,
+        "by_artist": watches_by_person_artist,
+    }
+    return model, shifts, by_person_date, watch_variables, hours, scores, denominators, objectives
 
 
 def validate_roster(roster: list[dict[str, Any]], people: list[dict[str, Any]], dates: list[str]) -> list[str]:
@@ -388,16 +396,20 @@ def add_warm_start(model: cp_model.CpModel, shifts: dict, people: list[dict[str,
         return False
 
 
-def write_report(result: dict[str, Any], dates: list[str], path: Path, output_name: str) -> None:
+def write_report(
+    result: dict[str, Any], people: list[dict[str, Any]], dates: list[str], path: Path, output_name: str
+) -> None:
+    version = result["optimizationVersion"]
     roster = result["roster"]
     summary = result["requestSummary"]
     hours = [person["totalDutyMinutes"] for person in roster]
+    people_by_name = {person["name"]: person for person in people}
 
     def fraction(done: int, total: int) -> str:
         return f"{done}/{total}（{done / total:.2%}）" if total else "0/0（未填报）"
 
     lines = [
-        "# 音乐节值班排班报告 v3",
+        f"# 音乐节值班排班报告 {version}",
         "",
         f"排班窗口：{WINDOW_START}–{WINDOW_END}，日期：{'、'.join(dates)}。",
         "",
@@ -411,7 +423,7 @@ def write_report(result: dict[str, Any], dates: list[str], path: Path, output_na
         "- 每天恰好 4 人在岗，至少 1 名男性在岗；交接重叠 0 分钟。",
         "",
     ]
-    if V2_OUTPUT_PATH.exists() and path.name == REPORT_PATH.name:
+    if version == "v3" and V2_OUTPUT_PATH.exists() and path.name == REPORT_PATH.name:
         baseline = json.loads(V2_OUTPUT_PATH.read_text(encoding="utf-8"))
         old = baseline["requestSummary"]
         old_hours = [person["totalDutyMinutes"] for person in baseline["roster"]]
@@ -429,6 +441,52 @@ def write_report(result: dict[str, Any], dates: list[str], path: Path, output_na
             "放宽工时差上限后，本轮搜索未找到满足更多观演需求的班表；`FEASIBLE` 阶段仍可能存在更优解。",
             "",
         ])
+    if version == "v4":
+        baseline = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
+        old = baseline["requestSummary"]
+        old_by_name = {person["name"]: person for person in baseline["roster"]}
+        lines.extend([
+            "## 与 v3 对比",
+            "",
+            "陈思含增加 2 项已满足需求。仅陈思含、蒋姝、杨田泽的班次有调整；其余五人保持不变。",
+            "",
+            "| 人员 | v3 满足 | v4 满足 | v3 工时 | v4 工时 |",
+            "| --- | ---: | ---: | ---: | ---: |",
+        ])
+        for person in roster:
+            previous = old_by_name[person["name"]]
+            old_done = sum(previous["fulfilledRequestCounts"].values())
+            new_done = sum(person["fulfilledRequestCounts"].values())
+            lines.append(
+                f"| {person['name']} | {old_done} | {new_done} | "
+                f"{previous['totalDutyMinutes']} 分钟 | {person['totalDutyMinutes']} 分钟 |"
+            )
+        lines.extend([
+            "",
+            f"v3 全部需求：{old['totalFulfilled']}/{old['totalRequested']}；"
+            f"v4 全部需求：{summary['totalFulfilled']}/{summary['totalRequested']}。"
+            "杨田泽少满足 1 项“必须看”，蒋姝少满足 1 项“特别想看”；"
+            "陈思含增加 2 项“有点想看”。",
+            "",
+        ])
+        for person in roster:
+            previous = old_by_name[person["name"]]
+            old_unmet = {(item["category"], item["artist"]) for item in previous["unmetPreferences"]}
+            new_unmet = {(item["category"], item["artist"]) for item in person["unmetPreferences"]}
+            gained = old_unmet - new_unmet
+            lost = new_unmet - old_unmet
+            if gained or lost:
+                changes = []
+                if gained:
+                    changes.append("新增满足 " + "、".join(
+                        f"{PREFERENCE_LABELS[category]}：{artist}" for category, artist in sorted(gained)
+                    ))
+                if lost:
+                    changes.append("不再满足 " + "、".join(
+                        f"{PREFERENCE_LABELS[category]}：{artist}" for category, artist in sorted(lost)
+                    ))
+                lines.append(f"- {person['name']}：{'；'.join(changes)}。")
+        lines.append("")
     lines.extend([
         "## 人员汇总",
         "",
@@ -445,11 +503,25 @@ def write_report(result: dict[str, Any], dates: list[str], path: Path, output_na
             f"| {person['name']} | {must_done}/{must_total} | {done}/{total} | "
             f"{capped:.2%} | {person['totalDutyMinutes']} 分钟 |"
         )
-    lines.extend(["", "## 未满足的观演需求", "", "| 人员 | 未满足需求 |", "| --- | --- |"])
-    for person in roster:
-        missed = person["unmetPreferences"]
-        items = "、".join(f"{item['categoryName']}：{item['artist']}" for item in missed) or "无"
-        lines.append(f"| {person['name']} | {items} |")
+    for heading, status, is_fulfilled in (
+        ("已满足的观演需求", "已满足", True),
+        ("未满足的观演需求", "未满足", False),
+    ):
+        category_headers = " | ".join(f"{status}：{label}" for label in PREFERENCE_LABELS.values())
+        lines.extend([
+            "", f"## {heading}", "",
+            f"| 姓名 | {category_headers} |",
+            "| --- | --- | --- | --- |",
+        ])
+        for person in roster:
+            requested = people_by_name[person["name"]]
+            viewable_artists = {performance["artist"] for performance in person["fullyViewablePerformances"]}
+            cells = []
+            for category in PREFERENCE_LABELS:
+                artists = requested.get(category, [])
+                matching = [artist for artist in artists if (artist in viewable_artists) == is_fulfilled]
+                cells.append("、".join(matching) or "无")
+            lines.append(f"| {person['name']} | {' | '.join(cells)} |")
     lines.append("")
     lines.append("未满足表示当前班次与完整观演所需的演出时间及前后 5 分钟缓冲冲突；不代表这些需求在所有可行班表中都无法满足。")
     lines.append("同一时间的多场演出分别判断；只要都不与本人班次冲突，就都计为满足。")
@@ -482,14 +554,90 @@ def write_report(result: dict[str, Any], dates: list[str], path: Path, output_na
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
-def solve(people_path: Path, lineup_path: Path, output_path: Path, report_path: Path, time_limit: float) -> int:
+def configure_v4(
+    model: cp_model.CpModel,
+    people: list[dict[str, Any]],
+    dates: list[str],
+    by_person_date: dict[tuple[int, int], list[dict[str, Any]]],
+    watch_variables: dict[str, Any],
+) -> list[tuple[str, Any, str]]:
+    """Keep four v3 rosters fixed while improving Chen Sihan's requests."""
+    baseline = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
+    old_roster = {person["name"]: person for person in baseline["roster"]}
+    index_by_name = {person["name"]: index for index, person in enumerate(people)}
+    fixed_names = {"杨淇贤", "潘旭欣", "谌雨涵", "胡一希"}
+    adjustable_names = {"陈思含", "蒋姝", "贺金意", "杨田泽"}
+    if set(index_by_name) != fixed_names | adjustable_names:
+        raise ValueError("v4 需要与 v3 相同的八人名单")
+    if validate_roster(baseline["roster"], people, dates):
+        raise ValueError("v3 基准班表未通过硬约束核对")
+
+    window_start = minute_of_day(WINDOW_START)
+    for name in fixed_names:
+        person_index = index_by_name[name]
+        for date_index, date in enumerate(dates):
+            old_shifts = [shift for shift in old_roster[name]["shifts"] if shift["date"] == date]
+            for slot_index, slot in enumerate(by_person_date[person_index, date_index]):
+                model.Add(slot["present"] == int(slot_index < len(old_shifts)))
+                if slot_index < len(old_shifts):
+                    old_shift = old_shifts[slot_index]
+                    model.Add(slot["start"] == minute_of_day(old_shift["startTime"]) - window_start)
+                    model.Add(slot["end"] == minute_of_day(old_shift["endTime"]) - window_start)
+
+    by_category = watch_variables["by_category"]
+    by_artist = watch_variables["by_artist"]
+    chen_index = index_by_name["陈思含"]
+    model.Add(sum(watch for category in PREFERENCE_LABELS for watch in by_category[chen_index, category]) == 4)
+    for artist in ("告五人", "文雀"):
+        model.Add(sum(by_artist[chen_index, artist]) >= 1)
+
+    for name in ("蒋姝", "贺金意", "杨田泽"):
+        person_index = index_by_name[name]
+        for category in PREFERENCE_LABELS:
+            floor = old_roster[name]["fulfilledRequestCounts"][category]
+            if (name, category) in {("蒋姝", "very_want_to_see"), ("杨田泽", "must_see")}:
+                floor -= 1
+            model.Add(sum(by_category[person_index, category]) >= floor)
+
+    # Prefer retaining the three adjustable colleagues' higher-priority
+    # requests, then choose the solution closest to their v3 shift boundaries.
+    other_indices = [index_by_name[name] for name in ("蒋姝", "贺金意", "杨田泽")]
+    movement = []
+    for name in adjustable_names:
+        person_index = index_by_name[name]
+        for date_index, date in enumerate(dates):
+            old_shifts = [shift for shift in old_roster[name]["shifts"] if shift["date"] == date]
+            for slot_index, slot in enumerate(by_person_date[person_index, date_index]):
+                old_start = minute_of_day(old_shifts[slot_index]["startTime"]) - window_start if slot_index < len(old_shifts) else 0
+                old_end = minute_of_day(old_shifts[slot_index]["endTime"]) - window_start if slot_index < len(old_shifts) else 0
+                for boundary, previous in (("start", old_start), ("end", old_end)):
+                    change = model.NewIntVar(0, WINDOW_MINUTES, f"v4_change_{person_index}_{date_index}_{slot_index}_{boundary}")
+                    model.AddAbsEquality(change, slot[boundary] - previous)
+                    movement.append(change)
+
+    return [
+        (
+            f"其他三人{PREFERENCE_LABELS[category]}满足数",
+            sum(watch for person_index in other_indices for watch in by_category[person_index, category]),
+            "max",
+        )
+        for category in PREFERENCE_LABELS
+    ] + [("相对 v3 的班次起止时间偏移量", sum(movement), "min")]
+
+
+def solve(
+    people_path: Path, lineup_path: Path, output_path: Path, report_path: Path, time_limit: float,
+    version: str = "v3",
+) -> int:
     people, performances, warnings = read_inputs(people_path, lineup_path)
     dates = sorted(
         {performance["date"] for performance in performances},
         key=lambda value: tuple(int(part) for part in value.split("-")),
     )
-    model, shifts, by_person_date, _active, hours, scores, denominators, objectives = build_model(people, performances, dates)
-    seed_path = output_path if output_path.exists() else V2_OUTPUT_PATH
+    model, shifts, by_person_date, watch_variables, hours, scores, denominators, objectives = build_model(people, performances, dates)
+    if version == "v4":
+        objectives = configure_v4(model, people, dates, by_person_date, watch_variables)
+    seed_path = OUTPUT_PATH if version == "v4" else (output_path if output_path.exists() else V2_OUTPUT_PATH)
     seeded = add_warm_start(model, shifts, people, dates, seed_path)
     solver = cp_model.CpSolver()
     solver.parameters.max_time_in_seconds = time_limit
@@ -632,7 +780,7 @@ def solve(people_path: Path, lineup_path: Path, output_path: Path, report_path: 
     request_total = sum(request_counts.values())
     fulfilled_total = sum(fulfilled_counts.values())
     result = {
-        "optimizationVersion": "v3",
+        "optimizationVersion": version,
         "serviceWindow": {"startTime": WINDOW_START, "endTime": WINDOW_END},
         "rules": {
             "minimumStaff": 4,
@@ -662,7 +810,7 @@ def solve(people_path: Path, lineup_path: Path, output_path: Path, report_path: 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     report_path.parent.mkdir(parents=True, exist_ok=True)
-    write_report(result, dates, report_path, output_path.name)
+    write_report(result, people, dates, report_path, output_path.name)
     print(f"已生成：{output_path}")
     print(f"求解状态：{solver.StatusName(last_status)}")
     for warning in warnings:
@@ -674,11 +822,14 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="生成音乐节公平排班表")
     parser.add_argument("--people", type=Path, default=PEOPLE_PATH)
     parser.add_argument("--lineup", type=Path, default=LINEUP_PATH)
-    parser.add_argument("--output", type=Path, default=OUTPUT_PATH)
-    parser.add_argument("--report", type=Path, default=REPORT_PATH)
+    parser.add_argument("--version", choices=("v3", "v4"), default="v3")
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--report", type=Path)
     parser.add_argument("--time-limit", type=float, default=60.0, help="每个优化阶段的时间上限（秒）")
     args = parser.parse_args()
-    return solve(args.people, args.lineup, args.output, args.report, args.time_limit)
+    output = args.output or (V4_OUTPUT_PATH if args.version == "v4" else OUTPUT_PATH)
+    report = args.report or (V4_REPORT_PATH if args.version == "v4" else REPORT_PATH)
+    return solve(args.people, args.lineup, output, report, args.time_limit, args.version)
 
 
 if __name__ == "__main__":

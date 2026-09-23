@@ -78,12 +78,12 @@
       {
         "objective": "短班次惩罚",
         "status": "FEASIBLE",
-        "value": 25.0
+        "value": 10.0
       },
       {
         "objective": "班次接近 75 分钟",
         "status": "FEASIBLE",
-        "value": 1312.0
+        "value": 1220.0
       },
       {
         "objective": "收尾班差距",
@@ -93,7 +93,7 @@
       {
         "objective": "换班次数",
         "status": "FEASIBLE",
-        "value": 82.0
+        "value": 80.0
       }
     ]
   },
@@ -109,44 +109,38 @@
       "shifts": [
         {
           "date": "09-25",
-          "startTime": "14:00",
-          "endTime": "15:05",
-          "durationMinutes": 65
-        },
-        {
-          "date": "09-25",
-          "startTime": "16:15",
-          "endTime": "17:30",
-          "durationMinutes": 75
-        },
-        {
-          "date": "09-25",
-          "startTime": "18:10",
-          "endTime": "19:50",
-          "durationMinutes": 100
-        },
-        {
-          "date": "09-25",
-          "startTime": "20:30",
-          "endTime": "21:30",
-          "durationMinutes": 60
-        },
-        {
-          "date": "09-26",
           "startTime": "12:00",
           "endTime": "13:00",
           "durationMinutes": 60
         },
         {
-          "date": "09-26",
-          "startTime": "14:15",
-          "endTime": "15:25",
-          "durationMinutes": 70
+          "date": "09-25",
+          "startTime": "13:50",
+          "endTime": "15:05",
+          "durationMinutes": 75
+        },
+        {
+          "date": "09-25",
+          "startTime": "16:05",
+          "endTime": "17:20",
+          "durationMinutes": 75
+        },
+        {
+          "date": "09-25",
+          "startTime": "18:15",
+          "endTime": "19:45",
+          "durationMinutes": 90
+        },
+        {
+          "date": "09-25",
+          "startTime": "20:25",
+          "endTime": "21:30",
+          "durationMinutes": 65
         },
         {
           "date": "09-26",
-          "startTime": "16:30",
-          "endTime": "17:45",
+          "startTime": "16:15",
+          "endTime": "17:30",
           "durationMinutes": 75
         },
         {
@@ -157,15 +151,21 @@
         },
         {
           "date": "09-27",
-          "startTime": "14:55",
-          "endTime": "16:10",
+          "startTime": "12:00",
+          "endTime": "13:15",
+          "durationMinutes": 75
+        },
+        {
+          "date": "09-27",
+          "startTime": "15:20",
+          "endTime": "16:35",
           "durationMinutes": 75
         },
         {
           "date": "09-27",
           "startTime": "17:25",
-          "endTime": "18:35",
-          "durationMinutes": 70
+          "endTime": "18:25",
+          "durationMinutes": 60
         },
         {
           "date": "09-27",
@@ -176,28 +176,76 @@
       ],
       "fullyViewablePerformances": [
         {
-          "performanceId": "0925-love-1300",
-          "artist": "陈婧霏",
-          "stageName": "爱舞台",
-          "date": "09-25",
-          "startTime": "13:00",
-          "endTime": "13:40"
+          "performanceId": "0926-strawberry-1340",
+          "artist": "JayFung冯允谦",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "13:40",
+          "endTime": "14:20"
         },
         {
-          "performanceId": "0926-love-1540",
-          "artist": "李幸倪GinLee",
+          "performanceId": "0926-strawberry-1500",
+          "artist": "洪嘉豪",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "15:00",
+          "endTime": "15:40"
+        },
+        {
+          "performanceId": "0926-strawberry-1740",
+          "artist": "AGA江海迦",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
+          "performanceId": "0926-love-1300",
+          "artist": "农夫FAMA",
           "stageName": "爱舞台",
           "date": "09-26",
-          "startTime": "15:40",
-          "endTime": "16:20"
-        },
-        {
-          "performanceId": "0927-strawberry-1300",
-          "artist": "椿",
-          "stageName": "草莓舞台",
-          "date": "09-27",
           "startTime": "13:00",
           "endTime": "13:40"
+        },
+        {
+          "performanceId": "0926-love-1420",
+          "artist": "Supper Moment",
+          "stageName": "爱舞台",
+          "date": "09-26",
+          "startTime": "14:20",
+          "endTime": "15:00"
+        },
+        {
+          "performanceId": "0926-planet-1340",
+          "artist": "Daze in White",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "13:40",
+          "endTime": "14:20"
+        },
+        {
+          "performanceId": "0926-planet-1500",
+          "artist": "秋林与乐队",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "15:00",
+          "endTime": "15:40"
+        },
+        {
+          "performanceId": "0926-planet-1740",
+          "artist": "林二汶",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
+          "performanceId": "0927-strawberry-1420",
+          "artist": "The Vaccines",
+          "stageName": "草莓舞台",
+          "date": "09-27",
+          "startTime": "14:20",
+          "endTime": "15:00"
         },
         {
           "performanceId": "0927-love-1340",
@@ -216,12 +264,12 @@
           "endTime": "17:20"
         },
         {
-          "performanceId": "0927-planet-1300",
-          "artist": "浅水ShallowEnd",
+          "performanceId": "0927-planet-1420",
+          "artist": "南青",
           "stageName": "星球舞台",
           "date": "09-27",
-          "startTime": "13:00",
-          "endTime": "13:40"
+          "startTime": "14:20",
+          "endTime": "15:00"
         },
         {
           "performanceId": "0927-planet-1840",
@@ -273,33 +321,45 @@
       "shifts": [
         {
           "date": "09-25",
-          "startTime": "13:35",
+          "startTime": "12:00",
+          "endTime": "13:15",
+          "durationMinutes": 75
+        },
+        {
+          "date": "09-25",
+          "startTime": "14:15",
           "endTime": "15:35",
-          "durationMinutes": 120
+          "durationMinutes": 80
         },
         {
           "date": "09-25",
           "startTime": "16:15",
-          "endTime": "18:10",
-          "durationMinutes": 115
+          "endTime": "18:15",
+          "durationMinutes": 120
         },
         {
           "date": "09-25",
-          "startTime": "18:50",
-          "endTime": "20:30",
-          "durationMinutes": 100
+          "startTime": "18:55",
+          "endTime": "20:25",
+          "durationMinutes": 90
         },
         {
           "date": "09-26",
           "startTime": "12:00",
-          "endTime": "13:55",
-          "durationMinutes": 115
+          "endTime": "13:40",
+          "durationMinutes": 100
         },
         {
           "date": "09-26",
-          "startTime": "16:20",
-          "endTime": "17:40",
-          "durationMinutes": 80
+          "startTime": "14:25",
+          "endTime": "15:40",
+          "durationMinutes": 75
+        },
+        {
+          "date": "09-26",
+          "startTime": "16:50",
+          "endTime": "18:05",
+          "durationMinutes": 75
         },
         {
           "date": "09-26",
@@ -309,48 +369,18 @@
         },
         {
           "date": "09-27",
-          "startTime": "12:00",
-          "endTime": "12:55",
-          "durationMinutes": 55
+          "startTime": "13:50",
+          "endTime": "15:05",
+          "durationMinutes": 75
         },
         {
           "date": "09-27",
-          "startTime": "13:45",
-          "endTime": "14:55",
-          "durationMinutes": 70
-        },
-        {
-          "date": "09-27",
-          "startTime": "15:54",
-          "endTime": "17:44",
-          "durationMinutes": 110
+          "startTime": "16:20",
+          "endTime": "17:35",
+          "durationMinutes": 75
         }
       ],
       "fullyViewablePerformances": [
-        {
-          "performanceId": "0926-strawberry-1500",
-          "artist": "洪嘉豪",
-          "stageName": "草莓舞台",
-          "date": "09-26",
-          "startTime": "15:00",
-          "endTime": "15:40"
-        },
-        {
-          "performanceId": "0926-love-1420",
-          "artist": "Supper Moment",
-          "stageName": "爱舞台",
-          "date": "09-26",
-          "startTime": "14:20",
-          "endTime": "15:00"
-        },
-        {
-          "performanceId": "0926-planet-1500",
-          "artist": "秋林与乐队",
-          "stageName": "星球舞台",
-          "date": "09-26",
-          "startTime": "15:00",
-          "endTime": "15:40"
-        },
         {
           "performanceId": "0927-strawberry-1300",
           "artist": "椿",
@@ -444,38 +474,32 @@
         {
           "date": "09-25",
           "startTime": "12:00",
-          "endTime": "13:35",
-          "durationMinutes": 95
+          "endTime": "13:45",
+          "durationMinutes": 105
         },
         {
           "date": "09-25",
-          "startTime": "14:15",
+          "startTime": "14:30",
           "endTime": "16:15",
-          "durationMinutes": 120
+          "durationMinutes": 105
         },
         {
           "date": "09-26",
           "startTime": "12:00",
-          "endTime": "13:15",
-          "durationMinutes": 75
+          "endTime": "13:50",
+          "durationMinutes": 110
         },
         {
           "date": "09-26",
-          "startTime": "13:55",
-          "endTime": "15:05",
-          "durationMinutes": 70
+          "startTime": "14:55",
+          "endTime": "16:15",
+          "durationMinutes": 80
         },
         {
           "date": "09-26",
-          "startTime": "15:45",
-          "endTime": "17:00",
-          "durationMinutes": 75
-        },
-        {
-          "date": "09-26",
-          "startTime": "17:40",
+          "startTime": "16:55",
           "endTime": "18:55",
-          "durationMinutes": 75
+          "durationMinutes": 120
         },
         {
           "date": "09-26",
@@ -485,27 +509,21 @@
         },
         {
           "date": "09-27",
-          "startTime": "12:00",
-          "endTime": "12:55",
-          "durationMinutes": 55
+          "startTime": "13:45",
+          "endTime": "15:20",
+          "durationMinutes": 95
         },
         {
           "date": "09-27",
-          "startTime": "14:09",
-          "endTime": "15:24",
-          "durationMinutes": 75
-        },
-        {
-          "date": "09-27",
-          "startTime": "16:10",
+          "startTime": "16:00",
           "endTime": "17:25",
-          "durationMinutes": 75
+          "durationMinutes": 85
         },
         {
           "date": "09-27",
-          "startTime": "18:15",
-          "endTime": "19:30",
-          "durationMinutes": 75
+          "startTime": "18:05",
+          "endTime": "19:35",
+          "durationMinutes": 90
         }
       ],
       "fullyViewablePerformances": [
@@ -681,15 +699,15 @@
       "shifts": [
         {
           "date": "09-25",
-          "startTime": "12:00",
-          "endTime": "13:45",
-          "durationMinutes": 105
+          "startTime": "13:00",
+          "endTime": "14:15",
+          "durationMinutes": 75
         },
         {
           "date": "09-25",
           "startTime": "15:35",
-          "endTime": "17:09",
-          "durationMinutes": 94
+          "endTime": "17:35",
+          "durationMinutes": 120
         },
         {
           "date": "09-25",
@@ -700,44 +718,38 @@
         {
           "date": "09-26",
           "startTime": "13:00",
-          "endTime": "14:10",
-          "durationMinutes": 70
+          "endTime": "14:15",
+          "durationMinutes": 75
         },
         {
           "date": "09-26",
-          "startTime": "15:25",
-          "endTime": "16:30",
-          "durationMinutes": 65
+          "startTime": "15:00",
+          "endTime": "16:15",
+          "durationMinutes": 75
         },
         {
           "date": "09-26",
-          "startTime": "17:45",
+          "startTime": "17:30",
           "endTime": "18:55",
-          "durationMinutes": 70
+          "durationMinutes": 85
         },
         {
           "date": "09-26",
-          "startTime": "20:15",
+          "startTime": "19:50",
           "endTime": "21:30",
+          "durationMinutes": 100
+        },
+        {
+          "date": "09-27",
+          "startTime": "13:15",
+          "endTime": "14:30",
           "durationMinutes": 75
         },
         {
           "date": "09-27",
-          "startTime": "12:00",
-          "endTime": "13:00",
-          "durationMinutes": 60
-        },
-        {
-          "date": "09-27",
-          "startTime": "14:10",
-          "endTime": "15:15",
-          "durationMinutes": 65
-        },
-        {
-          "date": "09-27",
-          "startTime": "16:34",
+          "startTime": "16:35",
           "endTime": "18:05",
-          "durationMinutes": 91
+          "durationMinutes": 90
         },
         {
           "date": "09-27",
@@ -788,6 +800,14 @@
           "endTime": "18:20"
         },
         {
+          "performanceId": "0926-strawberry-1620",
+          "artist": "陈蕾",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "16:20",
+          "endTime": "17:00"
+        },
+        {
           "performanceId": "0926-strawberry-1900",
           "artist": "薛凯琪",
           "stageName": "草莓舞台",
@@ -796,20 +816,12 @@
           "endTime": "19:40"
         },
         {
-          "performanceId": "0926-love-1420",
-          "artist": "Supper Moment",
-          "stageName": "爱舞台",
+          "performanceId": "0926-planet-1620",
+          "artist": "泳儿",
+          "stageName": "星球舞台",
           "date": "09-26",
-          "startTime": "14:20",
-          "endTime": "15:00"
-        },
-        {
-          "performanceId": "0926-love-1700",
-          "artist": "陈柏宇",
-          "stageName": "爱舞台",
-          "date": "09-26",
-          "startTime": "17:00",
-          "endTime": "17:40"
+          "startTime": "16:20",
+          "endTime": "17:00"
         },
         {
           "performanceId": "0926-planet-1900",
@@ -818,6 +830,14 @@
           "date": "09-26",
           "startTime": "19:00",
           "endTime": "19:40"
+        },
+        {
+          "performanceId": "0927-love-1500",
+          "artist": "Einstürzende Neubauten",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "15:00",
+          "endTime": "16:00"
         }
       ],
       "unmetPreferences": [
@@ -867,15 +887,15 @@
       "shifts": [
         {
           "date": "09-25",
-          "startTime": "12:55",
-          "endTime": "14:15",
-          "durationMinutes": 80
+          "startTime": "13:15",
+          "endTime": "14:30",
+          "durationMinutes": 75
         },
         {
           "date": "09-25",
-          "startTime": "17:09",
-          "endTime": "18:50",
-          "durationMinutes": 101
+          "startTime": "17:20",
+          "endTime": "18:55",
+          "durationMinutes": 95
         },
         {
           "date": "09-25",
@@ -885,21 +905,15 @@
         },
         {
           "date": "09-26",
-          "startTime": "12:00",
-          "endTime": "13:00",
-          "durationMinutes": 60
-        },
-        {
-          "date": "09-26",
-          "startTime": "14:30",
-          "endTime": "15:45",
+          "startTime": "13:10",
+          "endTime": "14:25",
           "durationMinutes": 75
         },
         {
           "date": "09-26",
-          "startTime": "16:40",
+          "startTime": "16:15",
           "endTime": "17:45",
-          "durationMinutes": 65
+          "durationMinutes": 90
         },
         {
           "date": "09-26",
@@ -909,21 +923,21 @@
         },
         {
           "date": "09-27",
-          "startTime": "12:55",
-          "endTime": "14:09",
-          "durationMinutes": 74
+          "startTime": "12:00",
+          "endTime": "13:45",
+          "durationMinutes": 105
         },
         {
           "date": "09-27",
-          "startTime": "15:24",
-          "endTime": "16:34",
-          "durationMinutes": 70
+          "startTime": "15:20",
+          "endTime": "16:35",
+          "durationMinutes": 75
         },
         {
           "date": "09-27",
-          "startTime": "18:35",
+          "startTime": "18:25",
           "endTime": "19:35",
-          "durationMinutes": 60
+          "durationMinutes": 70
         },
         {
           "date": "09-27",
@@ -950,14 +964,6 @@
           "endTime": "17:00"
         },
         {
-          "performanceId": "0925-love-1420",
-          "artist": "阿肆",
-          "stageName": "爱舞台",
-          "date": "09-25",
-          "startTime": "14:20",
-          "endTime": "15:00"
-        },
-        {
           "performanceId": "0925-love-1540",
           "artist": "夏日入侵企画",
           "stageName": "爱舞台",
@@ -982,20 +988,20 @@
           "endTime": "17:00"
         },
         {
-          "performanceId": "0926-strawberry-1340",
-          "artist": "JayFung冯允谦",
+          "performanceId": "0926-strawberry-1500",
+          "artist": "洪嘉豪",
           "stageName": "草莓舞台",
           "date": "09-26",
-          "startTime": "13:40",
-          "endTime": "14:20"
+          "startTime": "15:00",
+          "endTime": "15:40"
         },
         {
-          "performanceId": "0926-planet-1340",
-          "artist": "Daze in White",
+          "performanceId": "0926-planet-1500",
+          "artist": "秋林与乐队",
           "stageName": "星球舞台",
           "date": "09-26",
-          "startTime": "13:40",
-          "endTime": "14:20"
+          "startTime": "15:00",
+          "endTime": "15:40"
         },
         {
           "performanceId": "0927-strawberry-1420",
@@ -1081,32 +1087,32 @@
       "shifts": [
         {
           "date": "09-25",
-          "startTime": "12:00",
-          "endTime": "12:55",
-          "durationMinutes": 55
+          "startTime": "15:05",
+          "endTime": "16:05",
+          "durationMinutes": 60
         },
         {
           "date": "09-25",
-          "startTime": "15:05",
-          "endTime": "16:15",
+          "startTime": "19:35",
+          "endTime": "21:30",
+          "durationMinutes": 115
+        },
+        {
+          "date": "09-26",
+          "startTime": "12:00",
+          "endTime": "13:10",
           "durationMinutes": 70
         },
         {
-          "date": "09-25",
-          "startTime": "19:30",
-          "endTime": "21:30",
-          "durationMinutes": 120
+          "date": "09-26",
+          "startTime": "13:50",
+          "endTime": "15:00",
+          "durationMinutes": 70
         },
         {
           "date": "09-26",
-          "startTime": "13:00",
-          "endTime": "14:30",
-          "durationMinutes": 90
-        },
-        {
-          "date": "09-26",
-          "startTime": "15:25",
-          "endTime": "16:40",
+          "startTime": "15:40",
+          "endTime": "16:55",
           "durationMinutes": 75
         },
         {
@@ -1123,21 +1129,27 @@
         },
         {
           "date": "09-27",
-          "startTime": "13:00",
-          "endTime": "14:25",
-          "durationMinutes": 85
+          "startTime": "12:00",
+          "endTime": "13:00",
+          "durationMinutes": 60
         },
         {
           "date": "09-27",
-          "startTime": "16:30",
-          "endTime": "18:15",
-          "durationMinutes": 105
+          "startTime": "14:15",
+          "endTime": "15:20",
+          "durationMinutes": 65
         },
         {
           "date": "09-27",
-          "startTime": "19:30",
+          "startTime": "16:35",
+          "endTime": "18:05",
+          "durationMinutes": 90
+        },
+        {
+          "date": "09-27",
+          "startTime": "19:35",
           "endTime": "21:30",
-          "durationMinutes": 120
+          "durationMinutes": 115
         }
       ],
       "fullyViewablePerformances": [
@@ -1254,14 +1266,6 @@
           "endTime": "19:40"
         },
         {
-          "performanceId": "0927-love-1500",
-          "artist": "Einstürzende Neubauten",
-          "stageName": "爱舞台",
-          "date": "09-27",
-          "startTime": "15:00",
-          "endTime": "16:00"
-        },
-        {
           "performanceId": "0927-planet-1840",
           "artist": "文雀",
           "stageName": "星球舞台",
@@ -1330,50 +1334,50 @@
         {
           "date": "09-25",
           "startTime": "12:00",
-          "endTime": "14:00",
-          "durationMinutes": 120
+          "endTime": "13:50",
+          "durationMinutes": 110
         },
         {
           "date": "09-25",
           "startTime": "14:55",
-          "endTime": "16:50",
-          "durationMinutes": 115
+          "endTime": "16:55",
+          "durationMinutes": 120
         },
         {
           "date": "09-25",
-          "startTime": "17:30",
-          "endTime": "19:30",
+          "startTime": "17:35",
+          "endTime": "19:35",
           "durationMinutes": 120
         },
         {
           "date": "09-26",
-          "startTime": "14:10",
-          "endTime": "15:25",
-          "durationMinutes": 75
+          "startTime": "14:15",
+          "endTime": "15:35",
+          "durationMinutes": 80
         },
         {
           "date": "09-26",
-          "startTime": "18:15",
-          "endTime": "20:15",
-          "durationMinutes": 120
-        },
-        {
-          "date": "09-27",
-          "startTime": "12:00",
-          "endTime": "13:45",
+          "startTime": "18:05",
+          "endTime": "19:50",
           "durationMinutes": 105
         },
         {
           "date": "09-27",
-          "startTime": "14:25",
-          "endTime": "15:54",
-          "durationMinutes": 89
+          "startTime": "12:00",
+          "endTime": "13:50",
+          "durationMinutes": 110
         },
         {
           "date": "09-27",
-          "startTime": "17:44",
+          "startTime": "14:30",
+          "endTime": "16:00",
+          "durationMinutes": 90
+        },
+        {
+          "date": "09-27",
+          "startTime": "17:35",
           "endTime": "19:35",
-          "durationMinutes": 111
+          "durationMinutes": 120
         }
       ],
       "fullyViewablePerformances": [
@@ -1450,14 +1454,6 @@
           "endTime": "21:00"
         },
         {
-          "performanceId": "0927-strawberry-1600",
-          "artist": "Belle & Sebastian",
-          "stageName": "草莓舞台",
-          "date": "09-27",
-          "startTime": "16:00",
-          "endTime": "16:40"
-        },
-        {
           "performanceId": "0927-strawberry-2020",
           "artist": "痛仰",
           "stageName": "草莓舞台",
@@ -1480,14 +1476,6 @@
           "date": "09-27",
           "startTime": "19:40",
           "endTime": "20:20"
-        },
-        {
-          "performanceId": "0927-planet-1600",
-          "artist": "犬儒",
-          "stageName": "星球舞台",
-          "date": "09-27",
-          "startTime": "16:00",
-          "endTime": "16:40"
         }
       ],
       "unmetPreferences": [
@@ -1543,32 +1531,32 @@
         },
         {
           "date": "09-25",
-          "startTime": "16:50",
+          "startTime": "16:55",
           "endTime": "18:25",
-          "durationMinutes": 95
+          "durationMinutes": 90
         },
         {
           "date": "09-25",
-          "startTime": "19:50",
+          "startTime": "19:45",
           "endTime": "21:30",
-          "durationMinutes": 100
+          "durationMinutes": 105
         },
         {
           "date": "09-26",
-          "startTime": "13:15",
-          "endTime": "14:15",
+          "startTime": "12:00",
+          "endTime": "13:00",
           "durationMinutes": 60
         },
         {
           "date": "09-26",
-          "startTime": "15:05",
-          "endTime": "16:20",
+          "startTime": "13:40",
+          "endTime": "14:55",
           "durationMinutes": 75
         },
         {
           "date": "09-26",
-          "startTime": "17:00",
-          "endTime": "18:15",
+          "startTime": "15:35",
+          "endTime": "16:50",
           "durationMinutes": 75
         },
         {
@@ -1579,14 +1567,14 @@
         },
         {
           "date": "09-27",
-          "startTime": "12:55",
-          "endTime": "14:10",
+          "startTime": "13:00",
+          "endTime": "14:15",
           "durationMinutes": 75
         },
         {
           "date": "09-27",
-          "startTime": "15:15",
-          "endTime": "16:30",
+          "startTime": "15:05",
+          "endTime": "16:20",
           "durationMinutes": 75
         },
         {
@@ -1652,6 +1640,14 @@
           "endTime": "19:40"
         },
         {
+          "performanceId": "0926-strawberry-1740",
+          "artist": "AGA江海迦",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
           "performanceId": "0926-strawberry-1900",
           "artist": "薛凯琪",
           "stageName": "草莓舞台",
@@ -1660,12 +1656,12 @@
           "endTime": "19:40"
         },
         {
-          "performanceId": "0926-love-1420",
-          "artist": "Supper Moment",
+          "performanceId": "0926-love-1700",
+          "artist": "陈柏宇",
           "stageName": "爱舞台",
           "date": "09-26",
-          "startTime": "14:20",
-          "endTime": "15:00"
+          "startTime": "17:00",
+          "endTime": "17:40"
         },
         {
           "performanceId": "0926-love-1820",
@@ -1682,6 +1678,14 @@
           "date": "09-26",
           "startTime": "19:40",
           "endTime": "20:20"
+        },
+        {
+          "performanceId": "0926-planet-1740",
+          "artist": "林二汶",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "17:40",
+          "endTime": "18:20"
         },
         {
           "performanceId": "0926-planet-1900",
