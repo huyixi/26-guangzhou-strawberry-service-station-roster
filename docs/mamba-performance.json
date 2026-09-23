@@ -12,7 +12,7 @@
       "name": "杨淇贤",
       "gender": "男",
       "must_see": ["梅卡德尔"],
-      "very_want_to_see": ["椿", "浅水", "告五人", "犬儒", "回春丹", "痛仰"],
+      "very_want_to_see": ["椿", "浅水ShallowEnd", "告五人", "犬儒", "回春丹", "痛仰"],
       "somewhat_want_to_see": [],
       "notes": ["第三天其他的"]
     },
@@ -35,7 +35,7 @@
     {
       "name": "谌雨涵",
       "gender": "女",
-      "must_see": ["小狗的骨头", "卡西恩", "doudou"],
+      "must_see": ["小狗的骨头", "卡西恩Cacien", "DOUDOU"],
       "very_want_to_see": ["胡彦斌", "宝石Gem", "回春丹", "告五人"],
       "somewhat_want_to_see": [],
       "notes": []
@@ -44,14 +44,14 @@
       "name": "贺金意",
       "gender": "女",
       "must_see": ["阿肆", "余佳运", "郑润泽", "胡彦斌", "徐佳莹", "薛凯琪", "吴克群"],
-      "very_want_to_see": ["曾轶可", "卡西恩", "陈柏宇", "卫兰", "告五人", "回春丹", "陈婧霏", "宝石Gem"],
+      "very_want_to_see": ["曾轶可", "卡西恩Cacien", "陈柏宇", "卫兰", "告五人", "回春丹", "陈婧霏", "宝石Gem"],
       "somewhat_want_to_see": ["夏日入侵企画"],
       "notes": []
     },
     {
       "name": "杨田泽",
       "gender": "男",
-      "must_see": ["告五人", "doudou", "胡彦斌", "徐佳莹", "农夫", "kiri T", "李幸倪"],
+      "must_see": ["告五人", "DOUDOU", "胡彦斌", "徐佳莹", "农夫FAMA", "Kiri T", "李幸倪GinLee"],
       "very_want_to_see": ["侧田", "吴克群", "痛仰", "回春丹"],
       "somewhat_want_to_see": ["夏日入侵企画", "陈柏宇"],
       "notes": []
@@ -61,7 +61,7 @@
       "gender": "男",
       "must_see": ["陈婧霏", "棱镜", "汉堡黄", "南青", "许钧", "告五人"],
       "very_want_to_see": ["卫兰", "薛凯琪", "胡彦斌", "徐佳莹", "回春丹"],
-      "somewhat_want_to_see": ["tomora"],
+      "somewhat_want_to_see": ["TOMORA"],
       "notes": []
     }
   ]
