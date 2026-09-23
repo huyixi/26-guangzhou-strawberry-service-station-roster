@@ -1,0 +1,1774 @@
+{
+  "serviceWindow": {
+    "startTime": "12:00",
+    "endTime": "21:30"
+  },
+  "rules": {
+    "minimumStaff": 4,
+    "minimumMen": 1,
+    "minimumShiftMinutes": 40,
+    "maximumShiftMinutes": 120,
+    "minimumBreakBetweenShiftsMinutes": 40,
+    "firstAndLastOffDutyPeriodsCount": false,
+    "performanceBufferMinutes": 5,
+    "handoffOverlapMaximumMinutes": 3,
+    "actualOverstaffOverlapMinutes": 0,
+    "maximumTotalDutySpreadMinutes": 120
+  },
+  "requestSummary": {
+    "requested": {
+      "must_see": 33,
+      "very_want_to_see": 39,
+      "somewhat_want_to_see": 11
+    },
+    "fulfilled": {
+      "must_see": 30,
+      "very_want_to_see": 22,
+      "somewhat_want_to_see": 4
+    },
+    "totalRequested": 83,
+    "totalFulfilled": 56,
+    "fulfillmentRate": 0.6747
+  },
+  "solver": {
+    "name": "OR-Tools CP-SAT",
+    "stages": [
+      {
+        "objective": "必须看（填报 1 场）",
+        "status": "OPTIMAL",
+        "value": 2.0
+      },
+      {
+        "objective": "必须看（填报 3 场）",
+        "status": "OPTIMAL",
+        "value": 6.0
+      },
+      {
+        "objective": "必须看（填报 5 场）",
+        "status": "OPTIMAL",
+        "value": 5.0
+      },
+      {
+        "objective": "必须看（填报 6 场）",
+        "status": "OPTIMAL",
+        "value": 6.0
+      },
+      {
+        "objective": "必须看（填报 7 场）",
+        "status": "FEASIBLE",
+        "value": 11.0
+      },
+      {
+        "objective": "特别想看满足数",
+        "status": "FEASIBLE",
+        "value": 22.0
+      },
+      {
+        "objective": "有点想看满足数",
+        "status": "FEASIBLE",
+        "value": 4.0
+      },
+      {
+        "objective": "工时差距",
+        "status": "FEASIBLE",
+        "value": 12.0
+      },
+      {
+        "objective": "短班次惩罚",
+        "status": "FEASIBLE",
+        "value": 90.0
+      },
+      {
+        "objective": "班次接近 75 分钟",
+        "status": "FEASIBLE",
+        "value": 1610.0
+      },
+      {
+        "objective": "收尾班差距",
+        "status": "FEASIBLE",
+        "value": 3.0
+      },
+      {
+        "objective": "换班次数",
+        "status": "FEASIBLE",
+        "value": 83.0
+      }
+    ]
+  },
+  "validation": {
+    "hardConstraintsPassed": true
+  },
+  "warnings": [
+    "杨淇贤 的自由备注未纳入约束：第三天其他的"
+  ],
+  "roster": [
+    {
+      "name": "陈思含",
+      "shifts": [
+        {
+          "date": "09-25",
+          "startTime": "12:00",
+          "endTime": "13:00",
+          "durationMinutes": 60
+        },
+        {
+          "date": "09-25",
+          "startTime": "13:57",
+          "endTime": "15:05",
+          "durationMinutes": 68
+        },
+        {
+          "date": "09-25",
+          "startTime": "16:05",
+          "endTime": "17:11",
+          "durationMinutes": 66
+        },
+        {
+          "date": "09-25",
+          "startTime": "17:51",
+          "endTime": "19:46",
+          "durationMinutes": 115
+        },
+        {
+          "date": "09-25",
+          "startTime": "20:26",
+          "endTime": "21:30",
+          "durationMinutes": 64
+        },
+        {
+          "date": "09-26",
+          "startTime": "14:43",
+          "endTime": "15:43",
+          "durationMinutes": 60
+        },
+        {
+          "date": "09-26",
+          "startTime": "16:37",
+          "endTime": "17:40",
+          "durationMinutes": 63
+        },
+        {
+          "date": "09-26",
+          "startTime": "18:55",
+          "endTime": "20:25",
+          "durationMinutes": 90
+        },
+        {
+          "date": "09-27",
+          "startTime": "12:40",
+          "endTime": "13:45",
+          "durationMinutes": 65
+        },
+        {
+          "date": "09-27",
+          "startTime": "15:15",
+          "endTime": "16:33",
+          "durationMinutes": 78
+        },
+        {
+          "date": "09-27",
+          "startTime": "17:25",
+          "endTime": "18:25",
+          "durationMinutes": 60
+        },
+        {
+          "date": "09-27",
+          "startTime": "19:25",
+          "endTime": "20:30",
+          "durationMinutes": 65
+        }
+      ],
+      "fullyViewablePerformances": [
+        {
+          "performanceId": "0926-strawberry-1340",
+          "artist": "JayFung冯允谦",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "13:40",
+          "endTime": "14:20"
+        },
+        {
+          "performanceId": "0926-love-1300",
+          "artist": "农夫FAMA",
+          "stageName": "爱舞台",
+          "date": "09-26",
+          "startTime": "13:00",
+          "endTime": "13:40"
+        },
+        {
+          "performanceId": "0926-planet-1340",
+          "artist": "Daze in White",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "13:40",
+          "endTime": "14:20"
+        },
+        {
+          "performanceId": "0927-strawberry-1420",
+          "artist": "The Vaccines",
+          "stageName": "草莓舞台",
+          "date": "09-27",
+          "startTime": "14:20",
+          "endTime": "15:00"
+        },
+        {
+          "performanceId": "0927-love-1640",
+          "artist": "告五人",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "16:40",
+          "endTime": "17:20"
+        },
+        {
+          "performanceId": "0927-planet-1420",
+          "artist": "南青",
+          "stageName": "星球舞台",
+          "date": "09-27",
+          "startTime": "14:20",
+          "endTime": "15:00"
+        },
+        {
+          "performanceId": "0927-planet-1840",
+          "artist": "文雀",
+          "stageName": "星球舞台",
+          "date": "09-27",
+          "startTime": "18:40",
+          "endTime": "19:20"
+        }
+      ],
+      "unmetPreferences": [
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "回春丹",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "somewhat_want_to_see",
+          "categoryName": "有点想看",
+          "artist": "胡彦斌",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "somewhat_want_to_see",
+          "categoryName": "有点想看",
+          "artist": "卢冠廷",
+          "reason": "与本人班次冲突"
+        }
+      ],
+      "totalDutyMinutes": 854,
+      "preferenceScore": 130,
+      "maxPreferenceScore": 180,
+      "cappedPreferenceScoreRate": 0.7222,
+      "requestCounts": {
+        "must_see": 1,
+        "very_want_to_see": 2,
+        "somewhat_want_to_see": 2
+      },
+      "fulfilledRequestCounts": {
+        "must_see": 1,
+        "very_want_to_see": 1,
+        "somewhat_want_to_see": 0
+      },
+      "requestFulfillmentRate": 0.4
+    },
+    {
+      "name": "杨淇贤",
+      "shifts": [
+        {
+          "date": "09-25",
+          "startTime": "13:35",
+          "endTime": "15:35",
+          "durationMinutes": 120
+        },
+        {
+          "date": "09-25",
+          "startTime": "16:15",
+          "endTime": "17:51",
+          "durationMinutes": 96
+        },
+        {
+          "date": "09-25",
+          "startTime": "18:31",
+          "endTime": "20:26",
+          "durationMinutes": 115
+        },
+        {
+          "date": "09-26",
+          "startTime": "12:00",
+          "endTime": "13:15",
+          "durationMinutes": 75
+        },
+        {
+          "date": "09-26",
+          "startTime": "14:11",
+          "endTime": "15:33",
+          "durationMinutes": 82
+        },
+        {
+          "date": "09-26",
+          "startTime": "16:16",
+          "endTime": "17:45",
+          "durationMinutes": 89
+        },
+        {
+          "date": "09-26",
+          "startTime": "18:31",
+          "endTime": "20:25",
+          "durationMinutes": 114
+        },
+        {
+          "date": "09-27",
+          "startTime": "15:29",
+          "endTime": "17:25",
+          "durationMinutes": 116
+        },
+        {
+          "date": "09-27",
+          "startTime": "18:45",
+          "endTime": "19:35",
+          "durationMinutes": 50
+        }
+      ],
+      "fullyViewablePerformances": [
+        {
+          "performanceId": "0927-strawberry-1300",
+          "artist": "椿",
+          "stageName": "草莓舞台",
+          "date": "09-27",
+          "startTime": "13:00",
+          "endTime": "13:40"
+        },
+        {
+          "performanceId": "0927-strawberry-1420",
+          "artist": "The Vaccines",
+          "stageName": "草莓舞台",
+          "date": "09-27",
+          "startTime": "14:20",
+          "endTime": "15:00"
+        },
+        {
+          "performanceId": "0927-strawberry-2020",
+          "artist": "痛仰",
+          "stageName": "草莓舞台",
+          "date": "09-27",
+          "startTime": "20:20",
+          "endTime": "21:00"
+        },
+        {
+          "performanceId": "0927-love-1340",
+          "artist": "未知艺人",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "13:40",
+          "endTime": "14:20"
+        },
+        {
+          "performanceId": "0927-love-1800",
+          "artist": "梅卡德尔",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "18:00",
+          "endTime": "18:40"
+        },
+        {
+          "performanceId": "0927-love-1940",
+          "artist": "回春丹",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "19:40",
+          "endTime": "20:20"
+        },
+        {
+          "performanceId": "0927-planet-1300",
+          "artist": "浅水ShallowEnd",
+          "stageName": "星球舞台",
+          "date": "09-27",
+          "startTime": "13:00",
+          "endTime": "13:40"
+        },
+        {
+          "performanceId": "0927-planet-1420",
+          "artist": "南青",
+          "stageName": "星球舞台",
+          "date": "09-27",
+          "startTime": "14:20",
+          "endTime": "15:00"
+        }
+      ],
+      "unmetPreferences": [
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "告五人",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "犬儒",
+          "reason": "与本人班次冲突"
+        }
+      ],
+      "totalDutyMinutes": 857,
+      "preferenceScore": 220,
+      "maxPreferenceScore": 220,
+      "cappedPreferenceScoreRate": 1.0,
+      "requestCounts": {
+        "must_see": 1,
+        "very_want_to_see": 6,
+        "somewhat_want_to_see": 0
+      },
+      "fulfilledRequestCounts": {
+        "must_see": 1,
+        "very_want_to_see": 4,
+        "somewhat_want_to_see": 0
+      },
+      "requestFulfillmentRate": 0.7143
+    },
+    {
+      "name": "蒋姝",
+      "shifts": [
+        {
+          "date": "09-25",
+          "startTime": "12:00",
+          "endTime": "13:35",
+          "durationMinutes": 95
+        },
+        {
+          "date": "09-25",
+          "startTime": "14:15",
+          "endTime": "16:15",
+          "durationMinutes": 120
+        },
+        {
+          "date": "09-26",
+          "startTime": "13:01",
+          "endTime": "15:01",
+          "durationMinutes": 120
+        },
+        {
+          "date": "09-26",
+          "startTime": "16:50",
+          "endTime": "18:50",
+          "durationMinutes": 120
+        },
+        {
+          "date": "09-26",
+          "startTime": "20:25",
+          "endTime": "21:30",
+          "durationMinutes": 65
+        },
+        {
+          "date": "09-27",
+          "startTime": "12:00",
+          "endTime": "12:55",
+          "durationMinutes": 55
+        },
+        {
+          "date": "09-27",
+          "startTime": "13:45",
+          "endTime": "15:29",
+          "durationMinutes": 104
+        },
+        {
+          "date": "09-27",
+          "startTime": "16:09",
+          "endTime": "17:25",
+          "durationMinutes": 76
+        },
+        {
+          "date": "09-27",
+          "startTime": "18:05",
+          "endTime": "19:35",
+          "durationMinutes": 90
+        }
+      ],
+      "fullyViewablePerformances": [
+        {
+          "performanceId": "0925-strawberry-1620",
+          "artist": "余佳运",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "16:20",
+          "endTime": "17:00"
+        },
+        {
+          "performanceId": "0925-strawberry-1740",
+          "artist": "郑润泽",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
+          "performanceId": "0925-strawberry-1900",
+          "artist": "宝石Gem",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "19:00",
+          "endTime": "19:40"
+        },
+        {
+          "performanceId": "0925-strawberry-2020",
+          "artist": "胡彦斌",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "20:20",
+          "endTime": "21:00"
+        },
+        {
+          "performanceId": "0925-love-1700",
+          "artist": "曾轶可",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "17:00",
+          "endTime": "17:40"
+        },
+        {
+          "performanceId": "0925-love-1820",
+          "artist": "吴克群",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "18:20",
+          "endTime": "19:00"
+        },
+        {
+          "performanceId": "0925-love-1940",
+          "artist": "徐佳莹",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "19:40",
+          "endTime": "20:20"
+        },
+        {
+          "performanceId": "0925-planet-1620",
+          "artist": "卡西恩Cacien",
+          "stageName": "星球舞台",
+          "date": "09-25",
+          "startTime": "16:20",
+          "endTime": "17:00"
+        },
+        {
+          "performanceId": "0925-planet-1740",
+          "artist": "Phum Viphurit",
+          "stageName": "星球舞台",
+          "date": "09-25",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
+          "performanceId": "0925-planet-1900",
+          "artist": "汉堡黄",
+          "stageName": "星球舞台",
+          "date": "09-25",
+          "startTime": "19:00",
+          "endTime": "19:40"
+        },
+        {
+          "performanceId": "0926-strawberry-1900",
+          "artist": "薛凯琪",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "19:00",
+          "endTime": "19:40"
+        },
+        {
+          "performanceId": "0926-love-1540",
+          "artist": "李幸倪GinLee",
+          "stageName": "爱舞台",
+          "date": "09-26",
+          "startTime": "15:40",
+          "endTime": "16:20"
+        },
+        {
+          "performanceId": "0926-love-1940",
+          "artist": "卫兰",
+          "stageName": "爱舞台",
+          "date": "09-26",
+          "startTime": "19:40",
+          "endTime": "20:20"
+        },
+        {
+          "performanceId": "0926-planet-1900",
+          "artist": "Gigi炎明熹",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "19:00",
+          "endTime": "19:40"
+        },
+        {
+          "performanceId": "0927-strawberry-1300",
+          "artist": "椿",
+          "stageName": "草莓舞台",
+          "date": "09-27",
+          "startTime": "13:00",
+          "endTime": "13:40"
+        },
+        {
+          "performanceId": "0927-strawberry-2020",
+          "artist": "痛仰",
+          "stageName": "草莓舞台",
+          "date": "09-27",
+          "startTime": "20:20",
+          "endTime": "21:00"
+        },
+        {
+          "performanceId": "0927-love-1940",
+          "artist": "回春丹",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "19:40",
+          "endTime": "20:20"
+        },
+        {
+          "performanceId": "0927-planet-1300",
+          "artist": "浅水ShallowEnd",
+          "stageName": "星球舞台",
+          "date": "09-27",
+          "startTime": "13:00",
+          "endTime": "13:40"
+        }
+      ],
+      "unmetPreferences": [
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "告五人",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "棱镜",
+          "reason": "与本人班次冲突"
+        }
+      ],
+      "totalDutyMinutes": 845,
+      "preferenceScore": 440,
+      "maxPreferenceScore": 440,
+      "cappedPreferenceScoreRate": 1.0,
+      "requestCounts": {
+        "must_see": 5,
+        "very_want_to_see": 7,
+        "somewhat_want_to_see": 2
+      },
+      "fulfilledRequestCounts": {
+        "must_see": 5,
+        "very_want_to_see": 5,
+        "somewhat_want_to_see": 2
+      },
+      "requestFulfillmentRate": 0.8571
+    },
+    {
+      "name": "潘旭欣",
+      "shifts": [
+        {
+          "date": "09-25",
+          "startTime": "13:00",
+          "endTime": "14:15",
+          "durationMinutes": 75
+        },
+        {
+          "date": "09-25",
+          "startTime": "15:35",
+          "endTime": "17:30",
+          "durationMinutes": 115
+        },
+        {
+          "date": "09-25",
+          "startTime": "18:25",
+          "endTime": "19:35",
+          "durationMinutes": 70
+        },
+        {
+          "date": "09-26",
+          "startTime": "13:15",
+          "endTime": "14:21",
+          "durationMinutes": 66
+        },
+        {
+          "date": "09-26",
+          "startTime": "15:01",
+          "endTime": "16:16",
+          "durationMinutes": 75
+        },
+        {
+          "date": "09-26",
+          "startTime": "17:18",
+          "endTime": "18:31",
+          "durationMinutes": 73
+        },
+        {
+          "date": "09-26",
+          "startTime": "20:13",
+          "endTime": "21:30",
+          "durationMinutes": 77
+        },
+        {
+          "date": "09-27",
+          "startTime": "13:17",
+          "endTime": "14:55",
+          "durationMinutes": 98
+        },
+        {
+          "date": "09-27",
+          "startTime": "16:33",
+          "endTime": "18:05",
+          "durationMinutes": 92
+        },
+        {
+          "date": "09-27",
+          "startTime": "19:34",
+          "endTime": "21:30",
+          "durationMinutes": 116
+        }
+      ],
+      "fullyViewablePerformances": [
+        {
+          "performanceId": "0925-strawberry-1740",
+          "artist": "郑润泽",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
+          "performanceId": "0925-strawberry-2020",
+          "artist": "胡彦斌",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "20:20",
+          "endTime": "21:00"
+        },
+        {
+          "performanceId": "0925-love-1420",
+          "artist": "阿肆",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "14:20",
+          "endTime": "15:00"
+        },
+        {
+          "performanceId": "0925-love-1940",
+          "artist": "徐佳莹",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "19:40",
+          "endTime": "20:20"
+        },
+        {
+          "performanceId": "0925-planet-1740",
+          "artist": "Phum Viphurit",
+          "stageName": "星球舞台",
+          "date": "09-25",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
+          "performanceId": "0926-strawberry-1900",
+          "artist": "薛凯琪",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "19:00",
+          "endTime": "19:40"
+        },
+        {
+          "performanceId": "0926-planet-1900",
+          "artist": "Gigi炎明熹",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "19:00",
+          "endTime": "19:40"
+        },
+        {
+          "performanceId": "0927-love-1500",
+          "artist": "Einstürzende Neubauten",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "15:00",
+          "endTime": "16:00"
+        },
+        {
+          "performanceId": "0927-planet-1840",
+          "artist": "文雀",
+          "stageName": "星球舞台",
+          "date": "09-27",
+          "startTime": "18:40",
+          "endTime": "19:20"
+        }
+      ],
+      "unmetPreferences": [
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "宝石Gem",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "告五人",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "somewhat_want_to_see",
+          "categoryName": "有点想看",
+          "artist": "吴克群",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "somewhat_want_to_see",
+          "categoryName": "有点想看",
+          "artist": "卫兰",
+          "reason": "与本人班次冲突"
+        }
+      ],
+      "totalDutyMinutes": 857,
+      "preferenceScore": 340,
+      "maxPreferenceScore": 410,
+      "cappedPreferenceScoreRate": 0.8293,
+      "requestCounts": {
+        "must_see": 3,
+        "very_want_to_see": 3,
+        "somewhat_want_to_see": 3
+      },
+      "fulfilledRequestCounts": {
+        "must_see": 3,
+        "very_want_to_see": 1,
+        "somewhat_want_to_see": 1
+      },
+      "requestFulfillmentRate": 0.5556
+    },
+    {
+      "name": "谌雨涵",
+      "shifts": [
+        {
+          "date": "09-25",
+          "startTime": "12:55",
+          "endTime": "13:57",
+          "durationMinutes": 62
+        },
+        {
+          "date": "09-25",
+          "startTime": "17:11",
+          "endTime": "18:31",
+          "durationMinutes": 80
+        },
+        {
+          "date": "09-25",
+          "startTime": "19:30",
+          "endTime": "21:30",
+          "durationMinutes": 120
+        },
+        {
+          "date": "09-26",
+          "startTime": "12:00",
+          "endTime": "13:41",
+          "durationMinutes": 101
+        },
+        {
+          "date": "09-26",
+          "startTime": "15:43",
+          "endTime": "17:18",
+          "durationMinutes": 95
+        },
+        {
+          "date": "09-26",
+          "startTime": "18:55",
+          "endTime": "20:25",
+          "durationMinutes": 90
+        },
+        {
+          "date": "09-27",
+          "startTime": "12:00",
+          "endTime": "13:20",
+          "durationMinutes": 80
+        },
+        {
+          "date": "09-27",
+          "startTime": "14:15",
+          "endTime": "15:15",
+          "durationMinutes": 60
+        },
+        {
+          "date": "09-27",
+          "startTime": "15:55",
+          "endTime": "16:35",
+          "durationMinutes": 40
+        },
+        {
+          "date": "09-27",
+          "startTime": "18:25",
+          "endTime": "19:34",
+          "durationMinutes": 69
+        },
+        {
+          "date": "09-27",
+          "startTime": "20:30",
+          "endTime": "21:30",
+          "durationMinutes": 60
+        }
+      ],
+      "fullyViewablePerformances": [
+        {
+          "performanceId": "0925-strawberry-1500",
+          "artist": "棱镜",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "15:00",
+          "endTime": "15:40"
+        },
+        {
+          "performanceId": "0925-strawberry-1620",
+          "artist": "余佳运",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "16:20",
+          "endTime": "17:00"
+        },
+        {
+          "performanceId": "0925-love-1420",
+          "artist": "阿肆",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "14:20",
+          "endTime": "15:00"
+        },
+        {
+          "performanceId": "0925-love-1540",
+          "artist": "夏日入侵企画",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "15:40",
+          "endTime": "16:20"
+        },
+        {
+          "performanceId": "0925-planet-1500",
+          "artist": "小狗的骨头",
+          "stageName": "星球舞台",
+          "date": "09-25",
+          "startTime": "15:00",
+          "endTime": "15:40"
+        },
+        {
+          "performanceId": "0925-planet-1620",
+          "artist": "卡西恩Cacien",
+          "stageName": "星球舞台",
+          "date": "09-25",
+          "startTime": "16:20",
+          "endTime": "17:00"
+        },
+        {
+          "performanceId": "0926-strawberry-1740",
+          "artist": "AGA江海迦",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
+          "performanceId": "0926-love-1420",
+          "artist": "Supper Moment",
+          "stageName": "爱舞台",
+          "date": "09-26",
+          "startTime": "14:20",
+          "endTime": "15:00"
+        },
+        {
+          "performanceId": "0926-planet-1740",
+          "artist": "林二汶",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
+          "performanceId": "0927-strawberry-1720",
+          "artist": "DOUDOU",
+          "stageName": "草莓舞台",
+          "date": "09-27",
+          "startTime": "17:20",
+          "endTime": "18:00"
+        },
+        {
+          "performanceId": "0927-love-1640",
+          "artist": "告五人",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "16:40",
+          "endTime": "17:20"
+        },
+        {
+          "performanceId": "0927-love-1940",
+          "artist": "回春丹",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "19:40",
+          "endTime": "20:20"
+        },
+        {
+          "performanceId": "0927-planet-1720",
+          "artist": "许钧",
+          "stageName": "星球舞台",
+          "date": "09-27",
+          "startTime": "17:20",
+          "endTime": "18:00"
+        }
+      ],
+      "unmetPreferences": [
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "胡彦斌",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "宝石Gem",
+          "reason": "与本人班次冲突"
+        }
+      ],
+      "totalDutyMinutes": 857,
+      "preferenceScore": 360,
+      "maxPreferenceScore": 420,
+      "cappedPreferenceScoreRate": 0.8571,
+      "requestCounts": {
+        "must_see": 3,
+        "very_want_to_see": 4,
+        "somewhat_want_to_see": 0
+      },
+      "fulfilledRequestCounts": {
+        "must_see": 3,
+        "very_want_to_see": 2,
+        "somewhat_want_to_see": 0
+      },
+      "requestFulfillmentRate": 0.7143
+    },
+    {
+      "name": "贺金意",
+      "shifts": [
+        {
+          "date": "09-25",
+          "startTime": "15:05",
+          "endTime": "16:05",
+          "durationMinutes": 60
+        },
+        {
+          "date": "09-25",
+          "startTime": "19:35",
+          "endTime": "21:30",
+          "durationMinutes": 115
+        },
+        {
+          "date": "09-26",
+          "startTime": "12:00",
+          "endTime": "13:01",
+          "durationMinutes": 61
+        },
+        {
+          "date": "09-26",
+          "startTime": "13:41",
+          "endTime": "14:43",
+          "durationMinutes": 62
+        },
+        {
+          "date": "09-26",
+          "startTime": "15:33",
+          "endTime": "16:37",
+          "durationMinutes": 64
+        },
+        {
+          "date": "09-26",
+          "startTime": "17:45",
+          "endTime": "18:55",
+          "durationMinutes": 70
+        },
+        {
+          "date": "09-26",
+          "startTime": "20:25",
+          "endTime": "21:30",
+          "durationMinutes": 65
+        },
+        {
+          "date": "09-27",
+          "startTime": "12:00",
+          "endTime": "12:40",
+          "durationMinutes": 40
+        },
+        {
+          "date": "09-27",
+          "startTime": "13:20",
+          "endTime": "14:15",
+          "durationMinutes": 55
+        },
+        {
+          "date": "09-27",
+          "startTime": "14:55",
+          "endTime": "15:55",
+          "durationMinutes": 60
+        },
+        {
+          "date": "09-27",
+          "startTime": "16:35",
+          "endTime": "18:05",
+          "durationMinutes": 90
+        },
+        {
+          "date": "09-27",
+          "startTime": "19:35",
+          "endTime": "21:30",
+          "durationMinutes": 115
+        }
+      ],
+      "fullyViewablePerformances": [
+        {
+          "performanceId": "0925-strawberry-1340",
+          "artist": "ChiliChill乐团",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "13:40",
+          "endTime": "14:20"
+        },
+        {
+          "performanceId": "0925-strawberry-1620",
+          "artist": "余佳运",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "16:20",
+          "endTime": "17:00"
+        },
+        {
+          "performanceId": "0925-strawberry-1740",
+          "artist": "郑润泽",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
+          "performanceId": "0925-love-1300",
+          "artist": "陈婧霏",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "13:00",
+          "endTime": "13:40"
+        },
+        {
+          "performanceId": "0925-love-1420",
+          "artist": "阿肆",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "14:20",
+          "endTime": "15:00"
+        },
+        {
+          "performanceId": "0925-love-1700",
+          "artist": "曾轶可",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "17:00",
+          "endTime": "17:40"
+        },
+        {
+          "performanceId": "0925-love-1820",
+          "artist": "吴克群",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "18:20",
+          "endTime": "19:00"
+        },
+        {
+          "performanceId": "0925-planet-1340",
+          "artist": "丑橘出逃",
+          "stageName": "星球舞台",
+          "date": "09-25",
+          "startTime": "13:40",
+          "endTime": "14:20"
+        },
+        {
+          "performanceId": "0925-planet-1620",
+          "artist": "卡西恩Cacien",
+          "stageName": "星球舞台",
+          "date": "09-25",
+          "startTime": "16:20",
+          "endTime": "17:00"
+        },
+        {
+          "performanceId": "0925-planet-1740",
+          "artist": "Phum Viphurit",
+          "stageName": "星球舞台",
+          "date": "09-25",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
+          "performanceId": "0926-strawberry-1900",
+          "artist": "薛凯琪",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "19:00",
+          "endTime": "19:40"
+        },
+        {
+          "performanceId": "0926-love-1700",
+          "artist": "陈柏宇",
+          "stageName": "爱舞台",
+          "date": "09-26",
+          "startTime": "17:00",
+          "endTime": "17:40"
+        },
+        {
+          "performanceId": "0926-love-1940",
+          "artist": "卫兰",
+          "stageName": "爱舞台",
+          "date": "09-26",
+          "startTime": "19:40",
+          "endTime": "20:20"
+        },
+        {
+          "performanceId": "0926-planet-1900",
+          "artist": "Gigi炎明熹",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "19:00",
+          "endTime": "19:40"
+        },
+        {
+          "performanceId": "0927-planet-1840",
+          "artist": "文雀",
+          "stageName": "星球舞台",
+          "date": "09-27",
+          "startTime": "18:40",
+          "endTime": "19:20"
+        }
+      ],
+      "unmetPreferences": [
+        {
+          "category": "must_see",
+          "categoryName": "必须看",
+          "artist": "胡彦斌",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "must_see",
+          "categoryName": "必须看",
+          "artist": "徐佳莹",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "告五人",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "回春丹",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "宝石Gem",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "somewhat_want_to_see",
+          "categoryName": "有点想看",
+          "artist": "夏日入侵企画",
+          "reason": "与本人班次冲突"
+        }
+      ],
+      "totalDutyMinutes": 857,
+      "preferenceScore": 420,
+      "maxPreferenceScore": 430,
+      "cappedPreferenceScoreRate": 0.9767,
+      "requestCounts": {
+        "must_see": 7,
+        "very_want_to_see": 8,
+        "somewhat_want_to_see": 1
+      },
+      "fulfilledRequestCounts": {
+        "must_see": 5,
+        "very_want_to_see": 5,
+        "somewhat_want_to_see": 0
+      },
+      "requestFulfillmentRate": 0.625
+    },
+    {
+      "name": "杨田泽",
+      "shifts": [
+        {
+          "date": "09-25",
+          "startTime": "12:00",
+          "endTime": "13:45",
+          "durationMinutes": 105
+        },
+        {
+          "date": "09-25",
+          "startTime": "14:49",
+          "endTime": "16:32",
+          "durationMinutes": 103
+        },
+        {
+          "date": "09-25",
+          "startTime": "17:30",
+          "endTime": "19:30",
+          "durationMinutes": 120
+        },
+        {
+          "date": "09-26",
+          "startTime": "12:00",
+          "endTime": "12:55",
+          "durationMinutes": 55
+        },
+        {
+          "date": "09-26",
+          "startTime": "14:21",
+          "endTime": "15:35",
+          "durationMinutes": 74
+        },
+        {
+          "date": "09-26",
+          "startTime": "18:50",
+          "endTime": "20:13",
+          "durationMinutes": 83
+        },
+        {
+          "date": "09-27",
+          "startTime": "12:00",
+          "endTime": "13:17",
+          "durationMinutes": 77
+        },
+        {
+          "date": "09-27",
+          "startTime": "14:09",
+          "endTime": "16:09",
+          "durationMinutes": 120
+        },
+        {
+          "date": "09-27",
+          "startTime": "17:25",
+          "endTime": "19:25",
+          "durationMinutes": 120
+        }
+      ],
+      "fullyViewablePerformances": [
+        {
+          "performanceId": "0925-strawberry-2020",
+          "artist": "胡彦斌",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "20:20",
+          "endTime": "21:00"
+        },
+        {
+          "performanceId": "0925-love-1940",
+          "artist": "徐佳莹",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "19:40",
+          "endTime": "20:20"
+        },
+        {
+          "performanceId": "0926-strawberry-1620",
+          "artist": "陈蕾",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "16:20",
+          "endTime": "17:00"
+        },
+        {
+          "performanceId": "0926-strawberry-1740",
+          "artist": "AGA江海迦",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
+          "performanceId": "0926-strawberry-2020",
+          "artist": "卢冠廷",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "20:20",
+          "endTime": "21:00"
+        },
+        {
+          "performanceId": "0926-love-1300",
+          "artist": "农夫FAMA",
+          "stageName": "爱舞台",
+          "date": "09-26",
+          "startTime": "13:00",
+          "endTime": "13:40"
+        },
+        {
+          "performanceId": "0926-love-1540",
+          "artist": "李幸倪GinLee",
+          "stageName": "爱舞台",
+          "date": "09-26",
+          "startTime": "15:40",
+          "endTime": "16:20"
+        },
+        {
+          "performanceId": "0926-love-1700",
+          "artist": "陈柏宇",
+          "stageName": "爱舞台",
+          "date": "09-26",
+          "startTime": "17:00",
+          "endTime": "17:40"
+        },
+        {
+          "performanceId": "0926-planet-1620",
+          "artist": "泳儿",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "16:20",
+          "endTime": "17:00"
+        },
+        {
+          "performanceId": "0926-planet-1740",
+          "artist": "林二汶",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "17:40",
+          "endTime": "18:20"
+        },
+        {
+          "performanceId": "0926-planet-2020",
+          "artist": "Kiri T",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "20:20",
+          "endTime": "21:00"
+        },
+        {
+          "performanceId": "0927-strawberry-2020",
+          "artist": "痛仰",
+          "stageName": "草莓舞台",
+          "date": "09-27",
+          "startTime": "20:20",
+          "endTime": "21:00"
+        },
+        {
+          "performanceId": "0927-love-1640",
+          "artist": "告五人",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "16:40",
+          "endTime": "17:20"
+        },
+        {
+          "performanceId": "0927-love-1940",
+          "artist": "回春丹",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "19:40",
+          "endTime": "20:20"
+        }
+      ],
+      "unmetPreferences": [
+        {
+          "category": "must_see",
+          "categoryName": "必须看",
+          "artist": "DOUDOU",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "侧田",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "吴克群",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "somewhat_want_to_see",
+          "categoryName": "有点想看",
+          "artist": "夏日入侵企画",
+          "reason": "与本人班次冲突"
+        }
+      ],
+      "totalDutyMinutes": 857,
+      "preferenceScore": 370,
+      "maxPreferenceScore": 440,
+      "cappedPreferenceScoreRate": 0.8409,
+      "requestCounts": {
+        "must_see": 7,
+        "very_want_to_see": 4,
+        "somewhat_want_to_see": 2
+      },
+      "fulfilledRequestCounts": {
+        "must_see": 6,
+        "very_want_to_see": 2,
+        "somewhat_want_to_see": 1
+      },
+      "requestFulfillmentRate": 0.6923
+    },
+    {
+      "name": "胡一希",
+      "shifts": [
+        {
+          "date": "09-25",
+          "startTime": "12:00",
+          "endTime": "12:55",
+          "durationMinutes": 55
+        },
+        {
+          "date": "09-25",
+          "startTime": "13:45",
+          "endTime": "14:49",
+          "durationMinutes": 64
+        },
+        {
+          "date": "09-25",
+          "startTime": "16:32",
+          "endTime": "18:25",
+          "durationMinutes": 113
+        },
+        {
+          "date": "09-25",
+          "startTime": "19:46",
+          "endTime": "21:30",
+          "durationMinutes": 104
+        },
+        {
+          "date": "09-26",
+          "startTime": "12:55",
+          "endTime": "14:11",
+          "durationMinutes": 76
+        },
+        {
+          "date": "09-26",
+          "startTime": "15:35",
+          "endTime": "16:50",
+          "durationMinutes": 75
+        },
+        {
+          "date": "09-26",
+          "startTime": "17:40",
+          "endTime": "18:55",
+          "durationMinutes": 75
+        },
+        {
+          "date": "09-26",
+          "startTime": "20:25",
+          "endTime": "21:30",
+          "durationMinutes": 65
+        },
+        {
+          "date": "09-27",
+          "startTime": "12:55",
+          "endTime": "14:09",
+          "durationMinutes": 74
+        },
+        {
+          "date": "09-27",
+          "startTime": "18:05",
+          "endTime": "18:45",
+          "durationMinutes": 40
+        },
+        {
+          "date": "09-27",
+          "startTime": "19:35",
+          "endTime": "21:30",
+          "durationMinutes": 115
+        }
+      ],
+      "fullyViewablePerformances": [
+        {
+          "performanceId": "0925-strawberry-1500",
+          "artist": "棱镜",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "15:00",
+          "endTime": "15:40"
+        },
+        {
+          "performanceId": "0925-strawberry-1900",
+          "artist": "宝石Gem",
+          "stageName": "草莓舞台",
+          "date": "09-25",
+          "startTime": "19:00",
+          "endTime": "19:40"
+        },
+        {
+          "performanceId": "0925-love-1300",
+          "artist": "陈婧霏",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "13:00",
+          "endTime": "13:40"
+        },
+        {
+          "performanceId": "0925-love-1540",
+          "artist": "夏日入侵企画",
+          "stageName": "爱舞台",
+          "date": "09-25",
+          "startTime": "15:40",
+          "endTime": "16:20"
+        },
+        {
+          "performanceId": "0925-planet-1500",
+          "artist": "小狗的骨头",
+          "stageName": "星球舞台",
+          "date": "09-25",
+          "startTime": "15:00",
+          "endTime": "15:40"
+        },
+        {
+          "performanceId": "0925-planet-1900",
+          "artist": "汉堡黄",
+          "stageName": "星球舞台",
+          "date": "09-25",
+          "startTime": "19:00",
+          "endTime": "19:40"
+        },
+        {
+          "performanceId": "0926-strawberry-1900",
+          "artist": "薛凯琪",
+          "stageName": "草莓舞台",
+          "date": "09-26",
+          "startTime": "19:00",
+          "endTime": "19:40"
+        },
+        {
+          "performanceId": "0926-love-1420",
+          "artist": "Supper Moment",
+          "stageName": "爱舞台",
+          "date": "09-26",
+          "startTime": "14:20",
+          "endTime": "15:00"
+        },
+        {
+          "performanceId": "0926-love-1940",
+          "artist": "卫兰",
+          "stageName": "爱舞台",
+          "date": "09-26",
+          "startTime": "19:40",
+          "endTime": "20:20"
+        },
+        {
+          "performanceId": "0926-planet-1900",
+          "artist": "Gigi炎明熹",
+          "stageName": "星球舞台",
+          "date": "09-26",
+          "startTime": "19:00",
+          "endTime": "19:40"
+        },
+        {
+          "performanceId": "0927-strawberry-1420",
+          "artist": "The Vaccines",
+          "stageName": "草莓舞台",
+          "date": "09-27",
+          "startTime": "14:20",
+          "endTime": "15:00"
+        },
+        {
+          "performanceId": "0927-strawberry-1600",
+          "artist": "Belle & Sebastian",
+          "stageName": "草莓舞台",
+          "date": "09-27",
+          "startTime": "16:00",
+          "endTime": "16:40"
+        },
+        {
+          "performanceId": "0927-strawberry-1720",
+          "artist": "DOUDOU",
+          "stageName": "草莓舞台",
+          "date": "09-27",
+          "startTime": "17:20",
+          "endTime": "18:00"
+        },
+        {
+          "performanceId": "0927-love-1500",
+          "artist": "Einstürzende Neubauten",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "15:00",
+          "endTime": "16:00"
+        },
+        {
+          "performanceId": "0927-love-1640",
+          "artist": "告五人",
+          "stageName": "爱舞台",
+          "date": "09-27",
+          "startTime": "16:40",
+          "endTime": "17:20"
+        },
+        {
+          "performanceId": "0927-planet-1420",
+          "artist": "南青",
+          "stageName": "星球舞台",
+          "date": "09-27",
+          "startTime": "14:20",
+          "endTime": "15:00"
+        },
+        {
+          "performanceId": "0927-planet-1600",
+          "artist": "犬儒",
+          "stageName": "星球舞台",
+          "date": "09-27",
+          "startTime": "16:00",
+          "endTime": "16:40"
+        },
+        {
+          "performanceId": "0927-planet-1720",
+          "artist": "许钧",
+          "stageName": "星球舞台",
+          "date": "09-27",
+          "startTime": "17:20",
+          "endTime": "18:00"
+        }
+      ],
+      "unmetPreferences": [
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "胡彦斌",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "徐佳莹",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "very_want_to_see",
+          "categoryName": "特别想看",
+          "artist": "回春丹",
+          "reason": "与本人班次冲突"
+        },
+        {
+          "category": "somewhat_want_to_see",
+          "categoryName": "有点想看",
+          "artist": "TOMORA",
+          "reason": "与本人班次冲突"
+        }
+      ],
+      "totalDutyMinutes": 856,
+      "preferenceScore": 360,
+      "maxPreferenceScore": 430,
+      "cappedPreferenceScoreRate": 0.8372,
+      "requestCounts": {
+        "must_see": 6,
+        "very_want_to_see": 5,
+        "somewhat_want_to_see": 1
+      },
+      "fulfilledRequestCounts": {
+        "must_see": 6,
+        "very_want_to_see": 2,
+        "somewhat_want_to_see": 0
+      },
+      "requestFulfillmentRate": 0.6667
+    }
+  ]
+}
